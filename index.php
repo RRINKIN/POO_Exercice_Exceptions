@@ -7,30 +7,42 @@ spl_autoload_register('loadClass');
 
 // call Somme with catch exceptions
 try {
-    $newSum = new Somme("a", 4);
+    $newSum = new Somme(1, 4);
     $somme = $newSum->operate();
 } catch (Exception $e) {
     echo $e->getMessage();
 }
 echo "$somme";
+echo "<br>";
 
 // call Soustraction
 try {
-    $newSoustraction = new Soustraction("a",1);
+    $newSoustraction = new Soustraction(6,1);
     $soustraction = $newSoustraction->operate();
 } catch (Exception $e) {
     echo $e->getMessage();
 }
 echo "$soustraction";
+echo "<br>";
 
 // call Multiplication
-$newMultiplication = new Multiplication(2.5,2);
-$multiplication = $newMultiplication->operate();
+try {
+    $newMultiplication = new Multiplication(2.5,2);
+    $multiplication = $newMultiplication->operate();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 echo "$multiplication";
+echo "<br>";
 
 // call Division
-$newDivision = new Division(10,2);
-$division = $newDivision->operate();
+try {
+    $newDivision = new Division(10,0);
+    $division = $newDivision->operate();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 echo "$division";
+echo "<br>";
 
 ?>

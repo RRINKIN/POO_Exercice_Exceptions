@@ -26,8 +26,6 @@ abstract class Operation {
     abstract public function operate();
 
     // Methode d'erreur
-    // controle float
-    
     // controle vide
     // controle division par 0
 }
